@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time">
+        <div id="inputs">
+            <input type="number" id="hours" value="00" max="59" min="0">
+            <input type="number" id="minutes" value="00" max="59" min="0">
+            <input type="number" id="seconds" value="00" min="0">
+        </div>
+        <div>
+            <h1></h1>
+        </div>
+
+    </div>
+    <div id="controls">
+        <button id="start" onclick="start()">Start</button>
+        <button id="stop" onclick="stop()">Stop</button>
+        <button id="reset" onclick="reset()">Reset</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

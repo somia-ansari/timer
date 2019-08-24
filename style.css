@@ -1,0 +1,41 @@
+input {
+    border: none;
+    width: 5em;
+    background-color: #8e928db0;
+    font-size: 2.5em;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+h1 {
+    color: white;
+    background-color: red;
+    text-align: center;
+}
+
+body {
+    background-image: url(images/black.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vh;
+}
+
+#time #inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+}
+
+button {
+    width: 4em;
+    font-size: 2em;
+    border-radius: 5px;
+    margin: 10px 20px;
+}
