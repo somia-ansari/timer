@@ -8,16 +8,27 @@ input {
     margin: 10px;
 }
 
+#time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 h1 {
     color: white;
     background-color: red;
     text-align: center;
+    margin: 0px;
+    width: 37%;
+    border-radius: 0 15px;
 }
 
 body {
     background-image: url(images/black.png);
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,7 +36,7 @@ body {
     padding-top: 10vh;
 }
 
-#time #inputs {
+#inputs {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -33,9 +44,64 @@ body {
     width: 100%;
 }
 
+label {
+    color: aliceblue;
+}
+
+#labels {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    margin: 10px;
+    height: 65px;
+    border-radius: 9px 35px;
+    width: 65px;
+    background-color: none;
+}
+
 button {
     width: 4em;
     font-size: 2em;
     border-radius: 5px;
     margin: 10px 20px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #time {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #inputs {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    input {
+        width: 30%;
+        margin: 20px 0;
+        padding: 0;
+    }
+    button {
+        margin: 5px;
+    }
+    #labels {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+    }
 }

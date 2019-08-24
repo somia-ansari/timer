@@ -1,8 +1,11 @@
+const timeRunImg = document.querySelector('img');
 let timer;
 let hours;
 let minutes;
 let seconds;
 let isRunning = false;
+timeRunImg.style.display = "none";
+
 
 function showNumbs() {
     document.querySelector('#hours').value = hours;
@@ -15,6 +18,8 @@ function start() {
         document.querySelector('#time h1').innerHTML = "";
         timer = setInterval(decreaseTime, 1000);
         isRunning = true;
+        timeRunImg.style.display = "block";
+
     }
 }
 
@@ -105,6 +110,8 @@ function decreaseTime() {
 function stop() {
     clearInterval(timer);
     isRunning = false;
+    timeRunImg.style.display = "none";
+
 }
 
 function reset() {

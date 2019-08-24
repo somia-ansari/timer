@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="images/black.png">
+    <link rel="shortcut icon" href="images/icon.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Timer</title>
 </head>
@@ -13,13 +13,20 @@
 <body>
     <div id="time">
         <div id="inputs">
-            <input type="number" id="hours" value="00" max="59" min="0">
+            <input type="number" id="hours" value="00" min="0">
             <input type="number" id="minutes" value="00" max="59" min="0">
-            <input type="number" id="seconds" value="00" min="0">
+            <input type="number" id="seconds" value="00" max="59" min="0">
         </div>
-        <div>
-            <h1></h1>
+        <div id="labels">
+            <label for="hours">Hours</label>
+            <label for="minutes">Minutes</label>
+            <label for="seconds">Seconds</label>
+
         </div>
+        <img src="images/timerun.gif" alt="timerun">
+
+        <h1>
+        </h1>
 
     </div>
     <div id="controls">
