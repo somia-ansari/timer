@@ -3,6 +3,7 @@ let timer;
 let hours;
 let minutes;
 let seconds;
+let sound;
 let isRunning = false;
 timeRunImg.style.display = "none";
 
@@ -12,6 +13,14 @@ function showNumbs() {
     document.querySelector('#minutes').value = minutes;
     document.querySelector('#seconds').value = seconds;
 }
+
+// function playSound(soundObj) {
+//     let sound = document.getElementById(soundObj);
+//     sound.Play();
+// }
+// playSound("sound1");
+
+
 
 function start() {
     if (isRunning === false) {
@@ -27,6 +36,12 @@ function timeUp() {
     if (seconds === 0 && minutes === 0 && hours === 0) {
         reset();
         document.querySelector('#time h1').innerHTML = "TIME UP!!!";
+
+        function beep() {
+            sound = new Audio("success.wav");
+            sound.play();
+        }
+        beep();
     }
 }
 
@@ -106,6 +121,8 @@ function decreaseTime() {
 
     showNumbs();
 }
+
+
 
 function stop() {
     clearInterval(timer);
