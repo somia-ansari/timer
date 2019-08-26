@@ -29,6 +29,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
+    overflow: hidden;
     height: 100vh;
     display: flex;
     flex-direction: column;
