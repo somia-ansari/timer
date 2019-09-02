@@ -5,36 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/icon.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Timer</title>
 </head>
 
 <body>
-    <div id="time">
-        <div id="inputs">
-            <input type="number" id="hours" value="00" min="0">
-            <input type="number" id="minutes" value="00" max="59" min="0">
-            <input type="number" id="seconds" value="00" max="59" min="0">
-        </div>
-        <div id="labels">
-            <label for="hours">Hours</label>
-            <label for="minutes">Minutes</label>
-            <label for="seconds">Seconds</label>
+    <header>
+        <nav>
+            <ul>
+                <a href="https://github.com/somia-ansari/stopwatch" target="_blank">
+                    <li>Visit Repo
+                        <i class="far fa-eye"></i>
+                    </li>
+                </a>
+                <a href="https://github.com/somia-ansari/stopwatch" target="_blank">
+                    <li>Like Repo
+                        <i class="fas fa-heart"></i>
+                    </li>
+                </a>
+                <a href="https://somia-ansari.github.io/stopwatch/" target="_blank">
+                    <li>Go to Stopwatch
+                        <i class="fas fa-history"></i>
+                    </li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div id="time">
+            <div id="inputs">
+                <input type="number" id="hours" value="00" min="0">
+                <input type="number" id="minutes" value="00" max="59" min="0">
+                <input type="number" id="seconds" value="00" max="59" min="0">
+            </div>
+            <div id="labels">
+                <label for="hours">Hours</label>
+                <label for="minutes">Minutes</label>
+                <label for="seconds">Seconds</label>
+
+            </div>
+
+            <h1>
+            </h1>
 
         </div>
-        <img src="images/timerun.gif" alt="timerun">
+        <div id="controls">
+            <img src="images/timerun.gif" alt="timerun">
+            <button id="start" onclick="start()">Start</button>
+            <button id="stop" onclick="stop()">Stop</button>
+            <button id="reset" onclick="reset()">Reset</button>
+        </div>
 
-        <h1>
-        </h1>
-
-    </div>
-    <div id="controls">
-        <button id="start" onclick="start()">Start</button>
-        <button id="stop" onclick="stop()">Stop</button>
-        <button id="reset" onclick="reset()">Reset</button>
-        <!-- <embed src="success.wav" autostart="false" width="0" height="0" id="sound1" enablejavascript="true"> -->
-    </div>
+    </main>
     <script src="script.js"></script>
 </body>
 

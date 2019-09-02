@@ -3,45 +3,41 @@ let timer;
 let hours;
 let minutes;
 let seconds;
-let sound;
+const sound = new Audio("success.wav");
 let isRunning = false;
-timeRunImg.style.display = "none";
 
 
 function showNumbs() {
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
     document.querySelector('#hours').value = hours;
     document.querySelector('#minutes').value = minutes;
     document.querySelector('#seconds').value = seconds;
+
 }
-
-// function playSound(soundObj) {
-//     let sound = document.getElementById(soundObj);
-//     sound.Play();
-// }
-// playSound("sound1");
-
-
 
 function start() {
     if (isRunning === false) {
         document.querySelector('#time h1').innerHTML = "";
         timer = setInterval(decreaseTime, 1000);
         isRunning = true;
-        timeRunImg.style.display = "block";
-
+        timeRunImg.style.display = "inline-block";
+        document.querySelector('#start').style.display = "none";
     }
 }
 
 function timeUp() {
-    if (seconds === 0 && minutes === 0 && hours === 0) {
+    if ((seconds + minutes + hours) == 0) {
+        sound.play();
         reset();
         document.querySelector('#time h1').innerHTML = "TIME UP!!!";
-
-        function beep() {
-            sound = new Audio("success.wav");
-            sound.play();
-        }
-        beep();
     }
 }
 
@@ -49,94 +45,129 @@ function decreaseTime() {
     hours = parseInt(document.querySelector('#hours').value);
     minutes = parseInt(document.querySelector('#minutes').value);
     seconds = parseInt(document.querySelector('#seconds').value);
+    timeUp();
 
-    if (hours > 0 && minutes > 0 && seconds > 0) {
-        seconds--;
-        if (seconds == 0) {
-            seconds = 59;
-            minutes--;
+    if ((seconds + minutes + hours) > 0) {
+        if (seconds === 0) {
             if (minutes == 0) {
                 hours--;
                 minutes = 59;
+                seconds = 59;
+                if (hours == 0) {
+                    timeUp();
+                }
+            } else {
+                seconds = 59;
+                minutes--;
             }
+        } else {
+            seconds--;
         }
-    }
-    if (hours > 0 && minutes == 0 && seconds == 0) {
-        seconds = 59;
-        minutes = 59;
-        seconds--;
-        hours--;
-        if (seconds == 0) {
-            seconds = 59;
-            minutes--;
-            if (minutes == 0) {
-                hours--;
-            }
-        }
-
-    }
-    if (hours > 0 && minutes > 0 && seconds == 0) {
-        seconds = 59;
-        minutes--;
-        if (minutes == 0) {
-            hours--;
-            minutes = 59;
-        }
-    }
-    if (hours > 0 && minutes == 0 && seconds > 0) {
-        seconds--;
-        if (seconds == 0 && minutes == 0) {
-            minutes = 59;
-            seconds = 59;
-            hours--;
-        } else if (seconds == 0) {
-            minutes--;
-            seconds = 59;
-        }
-    }
-    if (hours == 0 && minutes > 0 && seconds == 0) {
-        seconds = 59;
-        minutes--;
-        seconds--;
-        if (seconds == 0) {
-            minutes--;
-            seconds = 59;
-        }
-    }
-    if (hours == 0 && minutes > 0 && seconds > 0) {
-        seconds--;
-        if (seconds == 0) {
-            seconds = 59;
-            minutes--;
-        }
-    }
-    if (hours == 0 && minutes == 0 && seconds > 0) {
-        seconds--;
-        timeUp();
     }
     if (seconds > 59 || minutes > 59) {
         document.querySelector('#time h1').innerHTML = "Wrong input, give less than 59";
         stop();
     }
-
     showNumbs();
+    timeUp();
 }
-
-
 
 function stop() {
     clearInterval(timer);
     isRunning = false;
     timeRunImg.style.display = "none";
-
+    document.querySelector('#start').style.display = "inline-block";
 }
 
 function reset() {
-    hours = 00;
-    minutes = 00;
-    seconds = 00;
+    hours = '0' + 0;
+    minutes = '0' + 0;
+    seconds = '0' + 0;
     showNumbs();
     stop();
     document.querySelector('#time h1').innerHTML = "";
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// if (hours > 0 && minutes > 0 && seconds > 0) {
+//     if (seconds == 0) {
+//         seconds = 59;
+//         minutes--;
+//         if (minutes == 0) {
+//             hours--;
+//             minutes = 59;
+//         }
+//     }else{
+//         seconds--;
+//     }
+// }
+// if (hours > 0 && minutes == 0 && seconds == 0) {
+//     seconds = 59;
+//     minutes = 59;
+//     seconds--;
+//     hours--;
+//     if (seconds == 0) {
+//         seconds = 59;
+//         minutes--;
+//         if (minutes == 0) {
+//             hours--;
+//         }
+//     }
+
+// }
+// if (hours > 0 && minutes > 0 && seconds == 0) {
+//     seconds = 59;
+//     minutes--;
+//     if (minutes == 0) {
+//         hours--;
+//         minutes = 59;
+//     }
+// }
+// if (hours > 0 && minutes == 0 && seconds > 0) {
+//     seconds--;
+//     if (seconds == 0 && minutes == 0) {
+//         minutes = 59;
+//         seconds = 59;
+//         hours--;
+//     } else if (seconds == 0) {
+//         minutes--;
+//         seconds = 59;
+//     }
+// }
+// if (hours == 0 && minutes > 0 && seconds == 0) {
+//     seconds = 59;
+//     minutes--;
+//     seconds--;
+//     if (seconds == 0) {
+//         minutes--;
+//         seconds = 59;
+//     }
+// }
+// if (hours == 0 && minutes > 0 && seconds > 0) {
+//     seconds--;
+//     if (seconds == 0) {
+//         seconds = 59;
+//         minutes--;
+//     }
+// }
+// if (hours == 0 && minutes == 0 && seconds > 0) {
+//     seconds--;
+//     timeUp();
+// }
+// if (seconds > 59 || minutes > 59) {
+//     document.querySelector('#time h1').innerHTML = "Wrong input, give less than 59";
+//     stop();
+// }

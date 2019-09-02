@@ -5,6 +5,7 @@ input {
     font-size: 2.5em;
     color: white;
     padding: 10px;
+    text-align: center;
     margin: 10px;
 }
 
@@ -32,9 +33,11 @@ body {
     overflow: hidden;
     height: 100vh;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    padding-top: 10vh;
+    padding-top: 0;
+    margin: 0;
 }
 
 #inputs {
@@ -58,11 +61,11 @@ label {
 }
 
 img {
-    margin: 10px;
+    margin: 10px 20px;
     height: 65px;
     border-radius: 9px 35px;
-    width: 65px;
-    background-color: none;
+    width: 4em;
+    display: none;
 }
 
 button {
@@ -71,6 +74,83 @@ button {
     border-radius: 5px;
     margin: 10px 20px;
     cursor: pointer;
+}
+
+div#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 15vh;
+    flex-wrap: wrap;
+}
+
+nav {
+    background-image: linear-gradient(to right, #747572, #9fa6ab);
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    min-height: 15vh;
+    width: 100%;
+}
+
+nav ul li {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px black;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ul a {
+    flex: 1;
+    min-height: 10vh;
+    font-size: 1.5em;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-right: 1px solid rgb(28, 28, 54);
+    border-left: 1px solid rgb(28, 28, 54);
+    border-radius: 10px;
+}
+
+nav ul a:hover {
+    background-color: #232a3d;
+    text-shadow: 0 0 2px rgb(203, 203, 235);
+    transition: 0.5s;
+}
+
+nav ul a:hover li {
+    color: #989d97;
+}
+
+nav ul a:hover i {
+    color: rgb(187, 141, 149);
+    transition: 0.5s;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+button:hover {
+    background-color: #232a3d;
+    color: rgb(187, 141, 149);
+    transition: 0.5s;
 }
 
 @media only screen and (max-width: 600px) {
@@ -97,6 +177,7 @@ button {
     }
     button {
         margin: 5px;
+        font-size: 1.4em;
     }
     #labels {
         width: 100%;
@@ -104,5 +185,11 @@ button {
         padding: 0;
         display: flex;
         justify-content: space-around;
+    }
+    nav a {
+        font-size: 1.2em;
+        flex-wrap: wrap;
+        padding: 10px;
+        min-height: auto;
     }
 }
