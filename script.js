@@ -80,9 +80,9 @@ function stop() {
 }
 
 function reset() {
-    hours = '0' + 0;
-    minutes = '0' + 0;
-    seconds = '0' + 0;
+    hours = 0;
+    minutes = 0;
+    seconds = 0;
     showNumbs();
     stop();
     document.querySelector('#time h1').innerHTML = "";
